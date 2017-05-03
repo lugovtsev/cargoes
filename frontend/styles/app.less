@@ -487,7 +487,7 @@ header {
               padding: 17px 35px 17px 30px;
               display: block;
               color: #000;
-              text-transform: capitalize;
+              text-transform: inherit;
               width: 100%;
               @media @desktop {
                 padding: 12px 35px 12px 18px;
@@ -785,6 +785,7 @@ section.partners {
 
   .partners__logos {
     justify-content: center;
+    align-items: center;
     & > div {
       text-align: center;
       margin-bottom: 10px;
@@ -1103,6 +1104,9 @@ footer {
 }
 section.map__contacts {
   padding-top: 20px;
+  @media @desktop {
+    padding-top: 0;
+  }
   h1 {
     color: #000;
     text-align: center;
@@ -1220,7 +1224,7 @@ section.contacts__form {
 section.calc {
   padding: 30px 0;
   @media @desktop {
-    padding: 20px 0 100px;
+    padding: 0 0 100px;
   }
   h1 {
     padding: 0 15px;
@@ -1612,6 +1616,8 @@ section.serv-page {
         font-weight: @fwb;
         padding: 12px 10px;
         text-align: center;
+        background-color: @lightblue;
+        border: 2px solid @lightblue;
         &:nth-child(1) {
           border: 2px solid @darkblue;
           background-color: @darkblue;
@@ -1809,6 +1815,21 @@ section.serv-page {
   }
 }
 
+/*FOR JOOMLA*/
+.breadcrumbs {
+  padding-top: 20px;
+}
+.serv-page .breadcrumbs {
+  padding-top: 0;
+}
+li.item-101 {
+  display: none;
+}
+a[href*="mailto"] {
+  color: #000;
+}
+
+
 /*стили для ошибки валидации*/
 
 input[type=text].fill-error,
@@ -1919,11 +1940,28 @@ textarea.fill-error::-webkit-input-placeholder {
 
 
 /*thanks page*/
+section.thanks, section.not-found {
+  h1 {
+    color: #000;
+    width: 100%;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    span {
+      font-size: 90px;
+    }
+  }
+  @media @desktop {
+    height: ~"calc(100vh - 583px)";
+    min-height: 350px;
+  }
+}
+
 a.back {
   display: block;
-  width: 180px;
   margin: 0 auto;
-  color: @white;
+  margin-bottom: 120px;
+  color: #000;
   text-align: center;
   text-decoration: underline;
 }

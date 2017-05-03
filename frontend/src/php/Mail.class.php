@@ -61,7 +61,7 @@
 
 		function sendMail()
 		{
-			if (isset($_POST['name']) && !empty($this->name))/* && empty($this->surname)*/
+			if (isset($_POST['name']) && !empty($this->name) && empty($this->surname))
 			{
 				mail($this->to, $this->theme, $this->emailmess, $this->headers);
 				header('Location: ../');
